@@ -531,6 +531,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .sec2-2> :first-child {
@@ -540,7 +541,7 @@ body {
 }
 
 .sec2-2> :nth-child(2) {
-  font-size: 2.2rem;
+font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 500;
   padding-bottom: 1.1rem;
 }
