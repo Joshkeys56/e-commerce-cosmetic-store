@@ -490,28 +490,28 @@ let sortClickText = document.querySelector('.sortClickText');
 let tikTik = document.querySelectorAll('.tik-tik');
 defSort.forEach(el => {
   el.addEventListener('click', (e) => {
-    switch (e.target.textContent) {
-      case "Sort by popularity":
+    switch (e.currentTarget.dataset.sort) {
+      case "popularity":
         document.getElementById('shopProducts').innerHTML = ''; 
         renderProducts(document.getElementById('shopProducts'), cartItems.slice(-4).reverse()) // displays the products in the shop page section with id of shopProducts
         sortClickText.textContent = "Sort by popularity";
         break;
-      case "Sort by average rating":
+      case "rating":
         document.getElementById('shopProducts').innerHTML = ''; 
         renderProducts(document.getElementById('shopProducts'), cartItems.reverse()) // displays the products in the shop page section with id of shopProducts
         sortClickText.textContent = "Sort by average rating"
         break;
-      case "Sort by latest":
+      case "latest":
         document.getElementById('shopProducts').innerHTML = ''; 
         renderProducts(document.getElementById('shopProducts'), cartItems.slice(-5).reverse()) // displays the products in the shop page section with id of shopProducts
         sortClickText.textContent = "Sort by latest"
         break;
-      case "Sort by price: low to high":
+      case "price-low-high":
         document.getElementById('shopProducts').innerHTML = ''; 
         renderProducts(document.getElementById('shopProducts'), cartItems.sort((a, b) => a.price - b.price)) // displays the products in the shop page section with id of shopProducts
         sortClickText.textContent = "Sort by price: low to high"
         break;
-      case "Sort by price: high to low":
+      case "price-high-low":
         document.getElementById('shopProducts').innerHTML = ''; 
         renderProducts(document.getElementById('shopProducts'), cartItems.sort((a, b) => b.price - a.price)) // displays the products in the shop page section with id of shopProducts
         sortClickText.textContent = "Sort by price: high to low"
